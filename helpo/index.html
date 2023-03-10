@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link rel="stylesheet" href="css/estilo.css">
+      <meta charset="UTF-8">
+      <meta name="description" content="Somos una empresa de soluciones empresariales en asistencia, con gran expansión y crecimiento debido a las ofertas de valor que conferimos a nuestros clientes">
+      <meta name="theme-color" content="#ed1b24">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="/jquery-3.2.1.js"> </script>
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="membresia/css/bootstrap.min.css">
+      <title>Helpo</title>
+   </head>
+   <body>
+      <section id="video">
+         <video src="video.mp4" loop autoplay preload muted></video>
+         <p>TE BRINDAMOS <span>SOLUCIONES ÚNICAS Y PERSONALIZADAS,</span>PARA QUE SOLO TE ENFOQUES EN LAS <span>METAS DE TU VIDA.</span></p>
+         <img src="img/HelpoGeneral/logo.png" alt="helpo_logo">
+         <div id="abajo" onclick="abajo()"></div>
+      </section>
+      <section id="asistencias">
+         <p>
+            Adecuamos nuestras ofertas para que cada necesidad sea resuelta de la mejor manera, <b>
+            enfocándonos en una atención única y personalizada con cada cliente.
+            </b>
+         </p>
+         <article>
+            <div id="vial" class="asistencias" onclick="mostrarVial()"></div>
+            <p>Asistencia Vial</p>
+            <div class="asistencias" id="hogar" onclick="mostrarHogar()"></div>
+            <p>Asistencia en el Hogar</p>
+            <div class="asistencias" id="medica" onclick="mostrarMedica()"></div>
+            <p>Asistencia Médica</p>
+            <div class="asistencias" id="dental" onclick="mostrarDental()" ></div>
+            <p>Asistencia Dental</p>
+            <div class="asistencias" id="seguros" onclick="mostrarAccidentes()"></div>
+            <p>Seguros por accidente</p>
+            <div class="asistencias" id="descuentos" onclick="mostrarDescuentos()"></div>
+            <p>Club de Descuentos</p>
+         </article>
+      </section>
+      <section class="modal" id="asistenciaVial">
+         <div>
+            <img src="img/Vial/iconoVial.png" alt="icono_vial">
+            <h2>Asistencia vial</h2>
+            <p>Remolque de vehículo por grúa</p>
+            <p>Paso de corriente</p>
+            <p>Cambio de llanta</p>
+            <p>Envío de gasolina</p>
+            <p>Cerrajería vial</p>
+            <p onclick="llamar()">Contactar</p>
+            <div class="salir" onclick="salirVial()"></div>
+            <p>Salir</p>
+            <div class="sig" id="sigVial" onclick="siguienteVial()"></div>
+            <div class="atras" id="atrasVial" onclick="anteriorVial()"></div>
+         </div>
+      </section>
+      <section class="modal" id="modalAccidentes">
+         <div>
+            <img src="img/accidente/iconoAccidente.png" alt="icono_accidente">
+            <h2>Seguros por Accidente</h2>
+            <p>Seguros por accidentes personales</p>
+            <p>Muerte accidental</p>
+            <p>Gastos funerarios</p>
+            <p>Pérdidas orgánicas</p>
+            <p onclick="llamar()"> Contactar</p>
+            <div class="salir" onclick="salirAccidentes()"></div>
+            <p>Salir</p>
+            <div class="sig" id="sigAccidentes" onclick="siguienteAccidentes()"></div>
+            <div class="atras" id="atrasAccidentes" onclick="anteriorAccidentes()"></div>
+         </div>
+      </section>
+      <section class="modal" id="modalDescuentos">
+         <div>
+            <img src="img/descuentos/iconoDescuentos.png" alt="icono_descuentos">
+            <h2>Club de descuentos</h2>
+            <p>Descuentos con más de</p>
+            <p>10 mil establecimientos comerciales</p>
+            <p onclick="llamar()">Contactar</p>
+            <div class="salir" onclick="salirDescuentos()"></div>
+            <p>Salir</p>
+            <div class="sig" id="sigDescuentos" onclick="siguienteDescuentos()"></div>
+            <div class="atras" id="atrasDescuentos" onclick="anteriorDescuentos()"></div>
+         </div>
+      </section>
+      <section class="modal" id="modalDental">
+         <div>
+            <img src="img/dental/iconoDental.png" alt="icono_dental">
+            <h2>Asistencia Dental</h2>
+            <p>Consultas diagnósticas y de urgencia</p>
+            <p>Limpieza dental</p>
+            <p>Radiografías dentales</p>
+            <p>Tratamientos por urgencia dental</p>
+            <p>Descuentos en tratamientos</p>
+            <p onclick="llamar()">Contactar</p>
+            <div class="salir" onclick="salirDental()"></div>
+            <p>Salir</p>
+            <div class="sig" id="sigDental" onclick="siguienteDental()"></div>
+            <div class="atras" id="atrasDental" onclick="anteriorDental()"></div>
+         </div>
+      </section>
+      <section class="modal" id="modalHogar">
+         <div>
+            <img src="img/hogar/iconoHogar.png" alt="icono_hogar">
+            <h2>Asistencia del hogar</h2>
+            <p>Vidriería</p>
+            <p>Cerrajería</p>
+            <p>Plomería</p>
+            <p>Electricidad</p>
+            <p onclick="llamar()">Contactar</p>
+            <div class="salir" onclick="salirHogar()"></div>
+            <p>Salir</p>
+            <div class="sig" id="sigHogar" onclick="siguienteHogar()"></div>
+            <div class="atras" id="atrasHogar" onclick="anteriorHogar()"></div>
+         </div>
+      </section>
+      <section class="modal" id="modalMedica">
+         <div>
+            <img src="img/medica/iconoMedica.png" alt="icono_medica">
+            <h2>Asistencia Médica</h2>
+            <p>Médico de cabecera vía telefónica</p>
+            <p>Psicólogo y nutriólogo telefónicos</p>
+            <p>Consulta médica a domicilio</p>
+            <p>Citas médicas</p>
+            <p>Descuentos en serivios médicos</p>
+            <p onclick="llamar()">Contactar</p>
+            <div class="salir" onclick="salirMedica()"></div>
+            <p>Salir</p>
+            <div class="sig" id="sigMedica" onclick="siguienteMedica()"></div>
+            <div class="atras" id="atrasMedica" onclick="anteriorMedica()"></div>
+         </div>
+      </section>
+      <section id="somos">
+         <img src="img/HelpoGeneral/mano.png" alt="mano_helpo_asistencias">
+         <h1>SOMOS UNA EMPRESA DE SOLUCIONES EMPRESARIALES EN ASISTENCIA.</h1>
+         <p>Somos una empresa de soluciones empresariales en asistencia, con gran expansión y crecimiento debido a las ofertas de valor que conferimos a nuestros clientes.Adecuamos nuestras ofertas para que cada necesidad sea resuelta de la mejor manera, enfocándonos en una atención única y personalizada con cada cliente.</p>
+      </section>
+      <section >
+      	<div class=" row col-lg-12 tex-center">
+      		
+      		<div class="col-lg-6 col-md-6 col-sm-12 text-center servicio">
+      			<a href="https://helpoasistencia.com/helpyou/" target="_blank"><img class="img-fluid img-responsive " src="img/membresias/ser2.png" alt=""></a>
+      			
+      			
+      		</div>
+      		<div class="col-lg-6 col-md-6 col-sm-12 text-center  servicio">
+      			<a href="https://helpoasistencia.com/helpyou/" target="_blank"><img class="img-fluid img-responsive " src="img/membresias/ser3.png" alt="" w></a>
+      			
+      		</div>
+
+      		
+      	</div>
+      	
+      </section>
+      
+      <div>
+      <a href="https://www.coursera.org/?authMode=signup" target="_blank"><img src="img/cursos/cursos.png" class="img-responsive img-fluid"></a>
+      </div>
+      <section id="estamos">
+         <h2>Estamos aquí para ayudarte.</h2>
+         <p>Si tienes una pregunta o necesitas ayuda, no dudes en ponerte en contacto con el servicio de atención al cliente de HELPO</p>
+         <p onclick="llamar()"> 5562327180   </p>
+         <figure>
+            <img src="img/HelpoGeneral/llama.png" alt="llama_helpo">
+            <figcaption onclick="llamar()">
+               Llamar
+            </figcaption>
+            <img src="img/HelpoGeneral/mensaje.png" alt="mensaje_helpo">
+            <figcaption onclick="enviarMensaje()">
+               Enviar mensaje
+            </figcaption>
+         </figure>
+      </section>
+      <section id="formulario">
+         <p>O déjanos tus datos y nosotros te contactamos:</p>
+         <form action="">
+            <input type="text" placeholder="Nombre" id="nombre">
+            <input type="text" placeholder="Empresa" id="empresa">
+            <input type="text" placeholder="Mail" id="email">
+            <input type="tel" placeholder="Teléfono" id="tel">
+            <input type="text" name="" id="mensaje" placeholder="Escribe lo que necesites..." >
+            <input type="button" value="Enviar mensaje" onclick="obtenerDatos()">
+         </form>
+      </section>
+      <footer>
+         <p onclick="aviso()">AVISO DE PRIVACIDAD</p>
+      </footer>
+      <script>
+         abajo = () => {
+            location.href = "#asistencias"
+         }
+         
+         
+         mostrarVial =() => {
+             console.log('vial')
+             document.querySelector("#asistenciaVial").style.display = "grid"
+         }
+         salirVial = () => {
+             document.querySelector("#asistenciaVial").style.display = "none"
+         }
+         mostrarAccidentes = () =>{
+             console.log('accidentes')
+             document.querySelector("#modalAccidentes").style.display = "grid"
+         }
+         salirAccidentes = () => {
+             document.querySelector("#modalAccidentes").style.display = "none"
+         }
+          
+             
+         mostrarDental = () => {
+                 console.log('dental')
+                 document.querySelector("#modalDental").style.display = "grid"
+             }
+         salirDental = () => {
+             document.querySelector("#modalDental").style.display = "none"
+         }
+         mostrarMedica = () => {
+                 console.log('medica')
+                 document.querySelector("#modalMedica").style.display = "grid"
+             }
+         salirMedica = () => {
+             document.querySelector("#modalMedica").style.display = "none"
+         }
+         mostrarHogar = () =>  {
+                 console.log('hogar')
+                 document.querySelector("#modalHogar").style.display = "grid"
+             }
+         salirHogar = () =>{
+             document.querySelector("#modalHogar").style.display = "none"
+         }
+         mostrarDescuentos = () => {
+                  console.log('descuentos')
+                 document.querySelector("#modalDescuentos").style.display = "grid"
+         }
+         salirDescuentos = () => {
+             document.querySelector("#modalDescuentos").style.display = "none"
+         }
+             
+         llamar = () => {
+             location.href = 'tel:5562327180'
+         }
+         enviarMensaje = () => {
+             location.href = 'https://wa.me/525562327180'
+         }
+         siguienteVial = () => {
+             mostrarHogar()
+             salirVial()
+         }
+         anteriorVial = () => {
+             mostrarDescuentos()
+             salirVial()
+         }
+         siguienteHogar = () => {
+             salirHogar()
+             mostrarMedica()
+         }
+         anteriorHogar = () => {
+             salirHogar()
+             mostrarVial()
+         }
+         siguienteMedica = () => {
+             salirMedica()
+             mostrarDental()
+         }
+         anteriorMedica =() => {
+         
+             salirMedica()
+             mostrarHogar()
+         }
+         siguienteDental = () => {
+             salirDental()
+             mostrarAccidentes()
+         
+         }
+         anteriorDental = () => {
+             salirDental()
+             mostrarMedica()
+         }
+         siguienteAccidentes = () => {
+             salirAccidentes()
+             mostrarDescuentos()
+         }
+         anteriorAccidentes = () => {
+             salirAccidentes()
+             mostrarDental()
+         }
+         siguienteDescuentos = () => {
+             salirDescuentos()
+             mostrarVial()
+         }
+         anteriorDescuentos = () => {
+         	
+             salirDescuentos()
+             mostrarAccidentes()
+         }
+         aviso = () => {
+             location.href ='http://www.helpoasistencia.com/aviso.html'
+         }
+         
+         
+         function obtenerDatos(){
+         
+         
+         var nombre = document.getElementById('nombre').value
+         var mensaje=document.getElementById('mensaje').value
+         var empresa = document.getElementById('empresa').value 
+         var tel = document.getElementById('tel').value
+         var email = document.getElementById('email').value
+         if (nombre == ""){
+           alert('Falta el nombre')
+           console.log(nombre)
+         }
+         else if (tel == "")
+          {    
+           alert('Falta el Teléfono')
+           console.log(tel)
+          }
+         else if (email == "")
+          {    
+           alert('Falta el Email')
+           console.log(email)
+          }
+          else if (empresa == "")
+          {    
+           alert('Falta el Teléfono')
+           console.log(empresa)
+          }
+         else {
+           
+           var datos = {"nombre":nombre,"tel":tel,"email":email,"empresa":empresa,"mensaje":mensaje};
+           
+         
+            $.ajax(
+                {
+                    url: "http://helpoasistencia.com/correo.php",
+                    data: datos,
+                    type: 'POST',
+                    'success': function(datos){
+                        console.log(datos)
+                        
+                        alert('Gracias, en breve uno de nuestros ejecutivos te contactará')
+                        location.href = 'http://helpoasistencia.com/'
+                        
+                }
+                
+            })
+            
+         }  
+         
+         }
+         
+      </script>
+      <script src="membresia/js/jquery-3.3.1.slim.min.js"></script>
+      <script src="membresia/js/popper.min.js"></script>
+      <script src="membresia/js/bootstrap.min.js"></script>
+   </body>
+</html>
+
